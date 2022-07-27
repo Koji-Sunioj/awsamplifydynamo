@@ -1,5 +1,20 @@
+.section {
+  background-color:aliceblue;
+  padding: 20px;
+  border: 1px solid grey;
+}
 
+
+table {
+  background-color: white;
+  border: 1px solid grey;
+}
 
 .container > * {
   margin: 30px 0;
+}
+
+#signer-outer {
+  display: flex;
+  
 }
