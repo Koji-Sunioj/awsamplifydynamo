@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { API, graphqlOperation } from "aws-amplify";
+import { Authenticator, withAuthenticator } from "@aws-amplify/ui-react";
 import { listTodos } from "./graphql/queries";
 import { Button, Container, Table } from "react-bootstrap";
 import { useState, useEffect } from "react";
@@ -27,7 +28,17 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <h1>Full stack React app with AWS Amplify and DynamoDB</h1>
+        <Authenticator hideDefault={true}>
+          {({ signOut, user }) => {
+            return (
+              <main>
+                <h1>signed in as {user.attributes.email}</h1>
+                <button onClick={signOut}>Sign out</button>
+              </main>
+            );
+          }}
+        </Authenticator>
+        <h1>Full stack React app with AWS Amplify and DynamoDB!</h1>
         {data !== null && (
           <Table striped bordered hover>
             <thead>
@@ -53,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);

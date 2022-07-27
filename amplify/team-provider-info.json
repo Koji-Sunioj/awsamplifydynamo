@@ -17,6 +17,9 @@
           "appId": "ddkz7sfme8cx7",
           "type": "manual"
         }
+      },
+      "auth": {
+        "amplifydynamo7d3430ac": {}
       }
     }
   }
