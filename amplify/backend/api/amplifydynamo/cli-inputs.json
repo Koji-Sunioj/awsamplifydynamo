@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "amplifydynamo",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/home/koji/Desktop/Javascript/amplifydynamo/amplify/backend/api/amplifydynamo/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7,
+      "apiKeyExpirationDate": "2022-08-03T16:00:47.448Z",
+      "keyDescription": "demo"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": []
+  }
+}
