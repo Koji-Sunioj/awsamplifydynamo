@@ -55,8 +55,6 @@ function App() {
     todos();
   };
 
-  console.log(Auth.user.attributes.email);
-
   return (
     <div className="App">
       <Container>
@@ -136,18 +134,20 @@ function App() {
         </div>
 
         <Authenticator></Authenticator>
-        <div className="section">
-          <span>
-            <p>signed in as {Auth.user.attributes.email}</p>{" "}
-            <Button
-              onClick={async () => {
-                Auth.signOut();
-              }}
-            >
-              sign out
-            </Button>
-          </span>
-        </div>
+        {Auth.user && (
+          <div className="section">
+            <span>
+              <p>signed in as {Auth.user.attributes.email}</p>{" "}
+              <Button
+                onClick={async () => {
+                  Auth.signOut();
+                }}
+              >
+                sign out
+              </Button>
+            </span>
+          </div>
+        )}
       </Container>
     </div>
   );
